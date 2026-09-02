@@ -652,24 +652,34 @@ p:last-child{ margin-bottom: 0; }
 
 .booking-links{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 40px;
   margin-top: 40px;
 }
 
-.booking-links a{
-  font-family: var(--font-heading);
-  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+.contact-link{
+  display: inline-flex;
   color: var(--blue-2);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.25s ease, color 0.25s ease;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
-.booking-links a:hover{
+.contact-link:hover{
   color: var(--slate);
-  border-color: var(--slate);
+  transform: translateY(-3px);
+}
+
+.contact-icon{
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.booking-links .contact-icon{
+  width: clamp(26px, 3vw, 34px);
+  height: clamp(26px, 3vw, 34px);
 }
 
 /* ---------- Crisis support ---------- */
@@ -748,6 +758,14 @@ p:last-child{ margin-bottom: 0; }
 
 .site-footer a{ text-decoration: none; color: var(--white); }
 .site-footer a:hover{ color: var(--blue-1); }
+
+.footer-contact{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+  margin-top: 14px;
+}
 
 /* ---------- Small nav / mobile adjustments ---------- */
 
