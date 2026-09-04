@@ -4,7 +4,7 @@
   // Fallbacks matching what's currently hardcoded on the public site, so the
   // admin form starts from real content even before the first save.
   var DEFAULTS = {
-    bio_photo_url: '../Images/Clare-headshot.webp',
+    bio_photo_url: '/Images/Clare-headshot.webp',
     bio_text: [
       'Hello! I’m so glad you’re here.',
       'I’m a Mental Health Counselor and Art Therapist with a private practice in Bellingham, Washington.',
