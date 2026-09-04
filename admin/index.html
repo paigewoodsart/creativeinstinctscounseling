@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin | Creative Instincts Counseling</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../Images/creative-instincts-logo-black.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Bressay:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+
+<div class="admin-shell">
+
+  <div id="notConfiguredBanner" class="admin-banner" hidden>
+    Supabase isn&rsquo;t connected yet. Fill in <code>js/supabase-config.js</code> and run <code>supabase/schema.sql</code> &mdash; see <code>supabase/SETUP.md</code>.
+  </div>
+
+  <section id="loginView" class="admin-card admin-card--narrow">
+    <img src="../Images/creative-instincts-logo-black-nav.webp" alt="Creative Instincts Counseling" class="admin-logo">
+    <h1>Admin Login</h1>
+    <form id="loginForm">
+      <label class="admin-field">
+        <span>Email</span>
+        <input type="email" id="loginEmail" autocomplete="username" required>
+      </label>
+      <label class="admin-field">
+        <span>Password</span>
+        <input type="password" id="loginPassword" autocomplete="current-password" required>
+      </label>
+      <button type="submit" class="admin-btn admin-btn--primary">Log In</button>
+      <p id="loginMessage" class="admin-message" role="alert"></p>
+      <button type="button" id="forgotPasswordBtn" class="admin-link-btn">Forgot password?</button>
+    </form>
+  </section>
+
+  <section id="dashboardView" class="admin-card" hidden>
+    <div class="admin-dashboard-header">
+      <img src="../Images/creative-instincts-logo-black-nav.webp" alt="Creative Instincts Counseling" class="admin-logo admin-logo--small">
+      <button type="button" id="logoutBtn" class="admin-btn admin-btn--ghost">Log Out</button>
+    </div>
+
+    <form id="contentForm">
+
+      <fieldset class="admin-section">
+        <legend>Bio Photo</legend>
+        <img id="bioPhotoPreview" class="admin-photo-preview" alt="Current bio photo">
+        <input type="file" id="bioPhotoInput" accept="image/jpeg,image/png">
+        <p class="admin-hint">JPEG or PNG only &mdash; not HEIC (the iPhone default format). If you&rsquo;re on an iPhone, use Share &rarr; Options &rarr; JPEG, or set Camera &gt; Formats to &ldquo;Most Compatible&rdquo; before taking the photo. It will be resized and cropped automatically to match the site&rsquo;s frame.</p>
+        <p id="bioPhotoMessage" class="admin-message" role="alert"></p>
+      </fieldset>
+
+      <fieldset class="admin-section">
+        <legend>Bio</legend>
+        <textarea id="bioTextInput" rows="12" placeholder="Hello! I'm so glad you're here.&#10;&#10;Separate paragraphs with a blank line."></textarea>
+        <p class="admin-hint">Separate paragraphs with a blank line. The first paragraph is styled as the intro line.</p>
+      </fieldset>
+
+      <fieldset class="admin-section">
+        <legend>Philosophy</legend>
+        <textarea id="philosophyTextInput" rows="8"></textarea>
+        <p class="admin-hint">Separate paragraphs with a blank line. The last paragraph is styled as the closing line.</p>
+      </fieldset>
+
+      <fieldset class="admin-section">
+        <legend>Pricing &amp; Insurances Accepted</legend>
+        <textarea id="pricingTextInput" rows="4"></textarea>
+        <p class="admin-hint">Shown under Treatment Modalities.</p>
+      </fieldset>
+
+      <fieldset class="admin-section">
+        <legend>Contact Info</legend>
+        <label class="admin-field">
+          <span>Phone (for calls)</span>
+          <input type="tel" id="contactPhoneInput" placeholder="(360) 218-7190">
+        </label>
+        <label class="admin-field">
+          <span>Text / SMS number</span>
+          <input type="tel" id="contactSmsInput" placeholder="(360) 218-7190">
+        </label>
+        <label class="admin-field">
+          <span>Email</span>
+          <input type="email" id="contactEmailInput" placeholder="clare@creativeinstinctscounseling.com">
+        </label>
+      </fieldset>
+
+      <button type="submit" class="admin-btn admin-btn--primary admin-btn--save">Save Changes</button>
+      <p id="saveMessage" class="admin-message" role="alert"></p>
+    </form>
+  </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../js/supabase-config.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

@@ -464,6 +464,8 @@ p:last-child{ margin-bottom: 0; }
   display: block;
   float: right;
   width: 34%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
   margin: 6px 0 24px 30px;
   border-radius: 4px;
 }
